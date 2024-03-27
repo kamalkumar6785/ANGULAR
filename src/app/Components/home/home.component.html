@@ -1,0 +1,17 @@
+<div *ngIf="loading">
+  <p>Loading...</p>
+</div>
+
+<div *ngIf="!loading && users.length != 0" class="text-bg-secondary">
+  <div class="container my-2 ">
+    <div class="row">
+      <div *ngFor="let user of users" class="col-md-3">
+        <app-user-card [user]="user"></app-user-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && users.length === 0">
+  <p>No users found.</p>
+</div>
